@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+[href] {
+  text-decoration: none;
+  color: #888;
+}
+
 .button {
   border: 2px solid var(--ming);
   padding: 0.5rem;
@@ -24,6 +29,7 @@
   margin-top: 2rem;
   cursor: pointer;
   display: inline-block;
+  color: #333;
 }
 
 .button:hover {
@@ -236,11 +242,6 @@ body {
   flex-direction: column;
   background-color: #ddd;
 }
-
-/* a[href] {
-  text-decoration: none;
-  color: #333;
-} */
 
 img {
   width: 100%;
