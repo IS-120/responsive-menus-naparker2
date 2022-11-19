@@ -4,7 +4,9 @@
   --orange: #a54f36;
   --kobe: #78290f;
   --color-svg: #fff;
-  --color-svg-hover: #ddd;
+  --color-svg-hover: #78290f;
+  --color-svg-close: #02064a;
+  --bg-image: url(/images/mountains-480.jpg);
 }
 
 * {
@@ -27,6 +29,74 @@
 .button:hover {
   background-color: var(--ming);
   color: #fff;
+}
+
+.menu-icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 1.5rem;
+  left: 3rem;
+  z-index: 3;
+}
+
+.menu-icon line {
+  stroke: var(--color-svg);
+  stroke-width: 6px;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 300ms ease, background-color 300ms;
+}
+
+.menu-icon line:first-child {
+  transform: translateY(16%);
+}
+
+.menu-icon line:last-child {
+  transform: translateY(-16%);
+}
+
+.menu-icon svg:hover line {
+  stroke: var(--color-svg-hover);
+}
+
+.close line {
+  stroke: var(--color-svg-close);
+}
+
+.close line:first-child {
+  transform: rotate(135deg);
+}
+
+.close line:last-child {
+  transform: rotate(-135deg);
+}
+
+header ul {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100vw);
+  transition: transform 300ms ease;
+}
+
+.close ul {
+  position: fixed;
+  inset: 0 0 0 0;
+  flex-direction: column;
+  background-color: var(--ming);
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+  margin: 0;
+  padding-top: 10rem;
+  font-size: 2rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 .card p {
@@ -60,6 +130,7 @@
   border-radius: 7px;
   transition: box-shadow 300ms ease-in-out;
   color: #ddd;
+  margin-top: 13rem;
 }
 
 .card .text-wrapper {
@@ -85,51 +156,6 @@
   filter: brightness(70%);
 }
 
-.close line {
-  stroke: var(--color-svg-close);
-}
-
-.close line:first-child {
-  transform: rotate(135deg);
-}
-
-.close line:last-child {
-  transform: rotate(-135deg);
-}
-
-.hero h1,
-.hero p {
-  margin: 0;
-  padding: 0;
-  color: #eee;
-}
-
-.hero h1 {
-  text-shadow: 2px 1px 3px rgba(23, 23, 23, 0.88);
-  font-size: clamp(4rem, 4vw, 5rem);
-}
-
-.hero img {
-  filter: brightness(75%);
-}
-
-.hero {
-  display: flex;
-  position: relative;
-  margin: 0;
-  align-self: stretch;
-}
-
-.hero .text-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 0.25rem;
-  position: absolute;
-  top: 100px;
-  left: 200px;
-}
-
 .text-wrapper h1 {
   text-shadow: 2px 1px 3px rgba(23, 23, 23, 0.88);
   font-size: clamp(2rem, 3vw, 5rem);
@@ -151,33 +177,22 @@
 .panel {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 15rem;
 }
 
-.menu-icon svg {
-  width: 80px;
-  height: auto;
-}
-
-.menu-icon line {
-  stroke: var(--color-svg);
-  stroke-width: 6px;
-  stroke-linecap: round;
-  transform-origin: center;
-  transition: transform 300ms ease, background-color 300ms;
-}
-
-.menu-icon line:first-child {
-  transform: translateY(16%);
-}
-
-.menu-icon line:last-child {
-  transform: translateY(-16%);
-}
-
-.menu-icon svg:hover line {
-  stroke: var(--color-svg-hover);
-}
+/* .bg-image {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2)
+    ),
+    var(--bg-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+} */
 
 h2 {
   font-family: "Montserrat", sans-serif;
@@ -243,6 +258,7 @@ svg {
 }
 
 nav {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -263,6 +279,39 @@ nav ul {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+.hero h1,
+.hero p {
+  margin: 0;
+  padding: 0;
+  color: #eee;
+}
+
+.hero h1 {
+  text-shadow: 2px 1px 3px rgba(23, 23, 23, 0.88);
+  font-size: clamp(4rem, 4vw, 5rem);
+}
+
+.hero img {
+  filter: brightness(75%);
+}
+
+.hero {
+  display: flex;
+  position: relative;
+  margin: 0;
+  align-self: stretch;
+}
+
+.hero .text-wrapper {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: absolute;
+  top: 100px;
+  left: 200px;
 }
 
 footer {
@@ -294,7 +343,7 @@ footer {
 
   .image-wrapper {
     flex: 1 1 30%;
-    wrap: nowrap;
+    flex-wrap: nowrap;
     aspect-ratio: 1/1;
   }
 
@@ -309,6 +358,13 @@ footer {
 
   .card {
     flex: 1 1 40%;
+  }
+
+  header ul {
+    position: static;
+    transform: none;
+    transition: none;
+    opacity: 1;
   }
 }
 
@@ -325,5 +381,9 @@ footer {
 
   .card {
     flex: 1 1 20%;
+  }
+
+  .menu-icon {
+    opacity: 0;
   }
 }

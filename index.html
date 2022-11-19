@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- copy your <head> info including title, favicon info, and site description meta tag here -->
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -31,9 +30,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <!-- but keep this line -->
   <link rel="stylesheet" href="styles/main.css">
 </head>
+
+
 
 <body>
   <header>
@@ -62,15 +62,8 @@
         <p>This is a bird, not a streaming service</p>
       </div>
     </section>
-
-    <nav class="close">
-      <div class="menu-icon">
-        <svg viewbox="0 0 60 60" width="40px" height="40px">...</svg>
-      </div>
-    </nav>
   </header>
 
-  <!-- copy your main, aside, and footer from your previous assignment here -->
   <main>
     <article class="panel">
       <div class="text-wrapper">
@@ -88,36 +81,6 @@
           width="480">
       </div>
     </article>
-    <article class="panel">
-      <div class="text-wrapper left">
-        <h2>The Origins</h2>
-        <p>There are three common peacock species, the blue peacock (Pavo cristatus), the green peacock, and the
-          African
-          peafowl. The blue peacock, also known as the Indian peacock is the most common type of peacock kept as a
-          pet.
-          They are native to India and Sri Lanka. The green peacock is native to Java and Myanmar while the African
-          peacock also called the Congo peacock is found in sub-Saharan Africa. Peafowl is a collective term used for
-          peacocks.</p>
-        <a href="about/" class="button">Continue
-          Reading</a>
-      </div>
-      <div class="image-wrapper">
-        <img src="images/mountains-480.jpg" alt="misty mountains" height="480" width="720">
-      </div>
-    </article>
-    <aside>
-      <p>Peacocks are large, colorful pheasants (typically blue and green) known for their iridescent tails. These tail
-        feathers, or coverts, spread out in a distinctive train that is more than 60% of the bird’s total body length
-        and boast colorful “eye” markings of blue, gold, red, and other hues. </p>
-      <p></p>
-
-      <!-- <svg>
-              <use href="#bear" />
-            </svg> -->
-
-    </aside>
-  </main>
-  <aside>
     <section class="cards">
       <a class="card">
         <div class="image-wrapper"><img src="images/green-peacock-480.jpg" alt="a green peacock looking right"
@@ -149,6 +112,30 @@
         </div>
       </a>
     </section>
+    <article class="panel">
+      <div class="text-wrapper left">
+        <h2>The Origins</h2>
+        <p>There are three common peacock species, the blue peacock (Pavo cristatus), the green peacock, and the
+          African
+          peafowl. The blue peacock, also known as the Indian peacock is the most common type of peacock kept as a
+          pet.
+          They are native to India and Sri Lanka. The green peacock is native to Java and Myanmar while the African
+          peacock also called the Congo peacock is found in sub-Saharan Africa. Peafowl is a collective term used for
+          peacocks.</p>
+        <a href="about/" class="button">Continue
+          Reading</a>
+      </div>
+      <div class="image-wrapper">
+        <img src="images/mountains-480.jpg" alt="misty mountains" height="480" width="720">
+      </div>
+    </article>
+    <aside>
+      <p>Peacocks are large, colorful pheasants (typically blue and green) known for their iridescent tails. These tail
+        feathers, or coverts, spread out in a distinctive train that is more than 60% of the bird’s total body length
+        and boast colorful “eye” markings of blue, gold, red, and other hues. </p>
+    </aside>
+  </main>
+  <aside>
   </aside>
   <!-- <svg>
     your SVG markup goes here.  
@@ -171,6 +158,11 @@
       This is the footer.
     </p>
   </footer>
+  <script>
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+      this.parentElement.classList.toggle("close");
+    });
+  </script>
 </body>
 
 </html>

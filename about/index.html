@@ -22,6 +22,12 @@
   <header>
 
     <nav>
+      <div class="menu-icon">
+        <svg viewbox="0 0 60 60" width="40px" height="40px">
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        </svg>
+      </div>
       <ul>
         <li><a href="..">Home</a></li>
         <li><a>About</a></li>
@@ -37,6 +43,11 @@
                  ../images/silhouette-peacock-900w.jpg 900w" sizes="50vw" src="../images/silhouette-peacock-600w.jpg"
       alt="a silhouette of a peacock on a branch" height="600" width="600">
   </main>
+  <script>
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+      this.parentElement.classList.toggle("close");
+    });
+  </script>
 </body>
 
 </html>
